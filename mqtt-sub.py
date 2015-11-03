@@ -21,9 +21,6 @@ def on_message(client, userdata, msg):
     )
 
 
-def on_publish(client, userdata, mid):
-    print userdata, mid
-
 if __name__ == '__main__':
     client = mqtt.Client()
     client.on_connect = on_connect
@@ -31,5 +28,4 @@ if __name__ == '__main__':
 
     # client.username_pw_set('YOUR_SECRET_KEY')
     client.connect("localhost", 18831, keepalive=60)
-    # client.loop_start()
     client.loop_forever()
